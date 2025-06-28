@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLinx - Make ₹1,000 Online with FREE AI Tools</title>
+    <meta name="description" content="Learn how to create faceless Reels using ChatGPT and CapCut. Earn online without showing your face. Just ₹49 for lifetime access.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>LearnLinx</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#testimonials" class="nav-link">Success Stories</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-fire"></i>
+                    <span>Limited Time Offer</span>
+                </div>
+                <h1 class="hero-title">
+                    Make Your First <span class="highlight">₹1,000 Online</span> 
+                    <br>Using FREE AI Tools
+                </h1>
+                <p class="hero-subtitle">
+                    No camera, no editing skills needed. Create faceless Reels with ChatGPT and CapCut. 
+                    Brands will pay you for your content!
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5 Short Videos Included</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Real Tool Links</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Script Templates</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Freelancing Tips</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="cta-button primary">
+                        <i class="fas fa-play"></i>
+                        Get Started for ₹1
+                    </button>
+                    <button class="cta-button secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Preview
+                    </button>
+                </div>
+                <div class="hero-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Lifetime Access • No Upsell • Beginner Friendly</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-status-bar">
+                        <span class="status-time">9:41</span>
+                        <span class="status-icons">
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi"></i>
+                            <i class="fas fa-battery-full"></i>
+                        </span>
+                    </div>
+                    <div class="phone-notch">
+                        <div class="notch-speaker"></div>
+                        <div class="notch-camera"></div>
+                    </div>
+                    <div class="phone-screen" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="video-preview">
+                            <video id="hero-phone-video" src="preview.mp4" poster="video-poster.jpg" controls loop muted playsinline style="width:100%;height:100%;border-radius:15px;object-fit:cover;background:#000;">
+                                Sorry, your browser doesn't support embedded videos.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Row -->
+    <section class="trust-badges">
+        <div class="container trust-badges-row">
+            <div class="trust-badge"><i class="fas fa-lock"></i> 100% Secure Payment</div>
+            <div class="trust-badge"><i class="fas fa-shield-alt"></i> 30-Day Money Back Guarantee</div>
+            <div class="trust-badge"><i class="fas fa-users"></i> 1000+ Happy Students</div>
+            <div class="trust-badge"><i class="fas fa-certificate"></i> SSL Encrypted</div>
+        </div>
+    </section>
+
+    <!-- Marketing Slider (Continuous Marquee) -->
+    <section class="marketing-slider-section">
+        <div class="container">
+            <div class="marketing-slider marquee" id="marketing-slider">
+                <div class="slide">🚀 Unlock the power of AI to earn online—no experience needed!</div>
+                <div class="slide">💸 Join 1000+ students who made their first ₹1,000 with LearnLinx!</div>
+                <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="slider-logo"> Visa Accepted</div>
+                <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="slider-logo"> Mastercard Accepted</div>
+                <div class="slide"><img src="https://razorpay.com/favicon.png" alt="Razorpay" class="slider-logo"> Powered by Razorpay</div>
+                <div class="slide">🔒 100% Secure Payment & 30-Day Money Back Guarantee</div>
+                <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="slider-logo"> 24/7 WhatsApp Support</div>
+                <div class="slide">🎬 Create faceless Reels and get paid by brands—start today!</div>
+                <div class="slide">🌟 4.9/5 Rated by 1000+ Happy Students</div>
+                <div class="slide">🔥 Limited Time Offer: Get the course for just ₹1!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>Struggling to Earn Online?</h2>
+                <p>You're not alone. Most people face these exact challenges:</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-camera-slash"></i>
+                    </div>
+                    <h3>Don't Like Being on Camera</h3>
+                    <p>You're not comfortable showing your face online, but still want to create content.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>No Technical Skills</h3>
+                    <p>You're not a techie and don't know where to start with video creation.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Don't Know How to Monetize</h3>
+                    <p>You create content but don't know how to get brands to pay you for it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Complete Solution</h2>
+                <p>Everything you need to start earning online with AI-powered content creation</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>5 Short Videos</h3>
+                    <p>Step-by-step tutorials showing you exactly how to create engaging faceless content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Real Tool Links</h3>
+                    <p>Direct links to all the FREE AI tools you need - ChatGPT, CapCut, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Script Templates</h3>
+                    <p>Ready-to-use templates that you can customize for any niche or topic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Freelancing Tips</h3>
+                    <p>Learn how to pitch to brands and get paid for your content creation skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="buy-row"><button class="cta-button trust-buy"><i class="fas fa-shopping-cart"></i> Buy Now <span class="secure-badge"><i class="fas fa-lock"></i> Secure</span></button></div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Journey Today</h2>
+                <p>Just ₹49 for lifetime access - no hidden costs, no upsells</p>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Complete Course Package</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount">1</span>
+                        <span class="period">only</span>
+                    </div>
+                </div>
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>5 Step-by-Step Video Tutorials</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Direct Links to FREE AI Tools</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Ready-to-Use Script Templates</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Freelancing & Monetization Guide</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Lifetime Access</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <i class="fas fa-check"></i>
+                        <span>No Upsells or Hidden Costs</span>
+                    </div>
+                </div>
+                <button class="pricing-cta">
+                    <i class="fas fa-rocket"></i>
+                    Get Started Now for ₹1
+                </button>
+                <div class="pricing-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>30-Day Money Back Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="buy-row"><button class="cta-button trust-buy"><i class="fas fa-shopping-cart"></i> Buy Now <span class="secure-badge"><i class="fas fa-lock"></i> Secure</span></button></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>See how others have transformed their online income</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I made my first ₹1,000 in just 2 weeks! The step-by-step method is so easy to follow."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya S.</h4>
+                            <span>Content Creator</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"No more camera anxiety! I create amazing content without showing my face."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul M.</h4>
+                            <span>Digital Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The script templates saved me hours. Now I focus on creating, not writing."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Anjali K.</h4>
+                            <span>Social Media Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buy-row"><button class="cta-button trust-buy"><i class="fas fa-shopping-cart"></i> Buy Now <span class="secure-badge"><i class="fas fa-lock"></i> Secure</span></button></div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>Is my payment secure?</h4>
+                    <p>Absolutely! All payments are processed via Razorpay with 256-bit SSL encryption.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I get lifetime access?</h4>
+                    <p>Yes, you get lifetime access to all course materials and future updates.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is there a refund policy?</h4>
+                    <p>Yes, we offer a 30-day money back guarantee. No questions asked!</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I contact support?</h4>
+                    <p>Of course! Reach us anytime via WhatsApp or email for help.</p>
+                </div>
+            </div>
+            <div class="buy-row"><button class="cta-button trust-buy"><i class="fas fa-shopping-cart"></i> Buy Now <span class="secure-badge"><i class="fas fa-lock"></i> Secure</span></button></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Make Your First ₹1,000?</h2>
+                <p>Join thousands of creators who are already earning online with AI-powered content</p>
+                <button class="cta-button primary large">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Journey for ₹1
+                </button>
+                <div class="cta-features">
+                    <span><i class="fas fa-clock"></i> Instant Access</span>
+                    <span><i class="fas fa-infinity"></i> Lifetime Access</span>
+                    <span><i class="fas fa-shield-alt"></i> Money Back Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>LearnLinx</span>
+                    </div>
+                    <p>Empowering creators to earn online with AI-powered content creation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="https://wa.me/919999999999" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LearnLinx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom Bar -->
+    <div class="fixed-bottom-bar">
+        <div class="bar-content">
+            <span class="bar-offer">₹1/- Only 20 seats left!</span>
+            <button class="bar-cta-button" id="start-now-bar-btn">
+                <i class="fas fa-play"></i> START NOW
+            </button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html> 
