@@ -779,21 +779,137 @@ function lazyLoadImages() {
 // Initialize lazy loading
 document.addEventListener('DOMContentLoaded', lazyLoadImages);
 
-// Marketing Slider Continuous Marquee
-(function() {
+// Marketing Slider Horizontal Slider (One by One)
+document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('marketing-slider');
     if (!slider) return;
-    // Duplicate slides for seamless loop
-    slider.innerHTML += slider.innerHTML;
-    let speed = 1.1; // px per frame
-    let pos = 0;
-    function animate() {
-        pos -= speed;
-        if (Math.abs(pos) >= slider.scrollWidth / 2) {
-            pos = 0;
-        }
-        slider.style.transform = `translateX(${pos}px)`;
-        requestAnimationFrame(animate);
+    const slides = Array.from(slider.children);
+    let current = 0;
+    // Set up slider container for horizontal sliding
+    slider.style.display = 'flex';
+    slider.style.transition = 'transform 0.6s cubic-bezier(0.77,0,0.18,1)';
+    slider.style.willChange = 'transform';
+    // Set width for each slide
+    slides.forEach(slide => {
+        slide.style.minWidth = '100%';
+        slide.style.flex = '0 0 100%';
+        slide.style.maxWidth = '100%';
+        slide.style.boxSizing = 'border-box';
+    });
+    function showSlide(idx) {
+        slider.style.transform = `translateX(-${idx * 100}%)`;
     }
-    animate();
-})(); 
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+    showSlide(current);
+    setInterval(nextSlide, 2500);
+});
+
+// Beautiful order placed alert every 9 seconds
+document.addEventListener('DOMContentLoaded', function() {
+    const names = [
+        'Priya', 'Rahul', 'Anjali', 'Amit', 'Sneha', 'Vikas', 'Neha', 'Rohit', 'Pooja', 'Karan',
+        'Simran', 'Arjun', 'Divya', 'Sahil', 'Ayesha', 'Manish', 'Riya', 'Nikhil', 'Megha', 'Saurabh'
+    ];
+    const cities = [
+        'Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 'Pune', 'Jaipur', 'Lucknow', 'Ahmedabad',
+        'Chandigarh', 'Indore', 'Bhopal', 'Patna', 'Nagpur', 'Surat', 'Kanpur', 'Ludhiana', 'Agra', 'Nashik'
+    ];
+    function showOrderAlert() {
+        const name = names[Math.floor(Math.random() * names.length)];
+        const city = cities[Math.floor(Math.random() * cities.length)];
+        const alert = document.createElement('div');
+        alert.className = 'order-alert';
+        alert.innerHTML = `<span class="order-emoji">🎉</span> <strong>${name} from ${city} enrolled!</strong>`;
+        document.body.appendChild(alert);
+        setTimeout(() => {
+            alert.classList.add('hide');
+            setTimeout(() => alert.remove(), 600);
+        }, 3000);
+    }
+    setInterval(showOrderAlert, 9000);
+});
+
+// Add styles for the order alert
+const orderAlertStyles = document.createElement('style');
+orderAlertStyles.textContent = `
+.order-alert {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(16,185,129,0.18), 0 1.5px 8px rgba(59,130,246,0.10);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  animation: orderPopIn 0.5s cubic-bezier(0.23,1,0.32,1);
+  transition: transform 0.5s, opacity 0.5s;
+  max-width: 90vw;
+  min-width: 180px;
+  width: auto;
+}
+.order-alert.hide {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.95);
+}
+.order-emoji {
+  font-size: 1.3rem;
+  margin-right: 0.7rem;
+}
+@keyframes orderPopIn {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.7) translateY(30px); }
+  60% { opacity: 1; transform: translateX(-50%) scale(1.08) translateY(-8px); }
+  80% { transform: translateX(-50%) scale(0.97) translateY(2px); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1) translateY(0); }
+}
+@media (max-width: 600px) {
+  .order-alert {
+    font-size: 0.92rem;
+    padding: 0.5rem 0.9rem;
+    min-width: 120px;
+    max-width: 96vw;
+  }
+  .order-emoji {
+    font-size: 1.1rem;
+  }
+}
+`;
+document.head.appendChild(orderAlertStyles);
+
+// FAQ dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(q => {
+        q.addEventListener('click', function() {
+            const item = this.closest('.faq-item');
+            // Accordion: close others
+            document.querySelectorAll('.faq-item').forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    function showTimerPopup() {
+        const popup = document.createElement('div');
+        popup.className = 'timer-popup';
+        popup.innerHTML = '<span style="font-size:1.3rem;margin-right:0.7rem;">⏰</span> <strong>Hurry! Very little time left to grab this offer.</strong>';
+        document.body.appendChild(popup);
+        setTimeout(() => {
+            popup.classList.add('hide');
+            setTimeout(() => popup.remove(), 600);
+        }, 3000);
+    }
+    setInterval(showTimerPopup, 10000);
+}); 
