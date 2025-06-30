@@ -906,6 +906,9 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.className = 'timer-popup';
         popup.innerHTML = '<span style="font-size:1.3rem;margin-right:0.7rem;">⏰</span> <strong>Hurry! Very little time left to grab this offer.</strong>';
         document.body.appendChild(popup);
+        // Force reflow to enable animation
+        void popup.offsetWidth;
+        popup.style.animation = 'timerSlideIn 0.5s cubic-bezier(0.23,1,0.32,1)';
         setTimeout(() => {
             popup.classList.add('hide');
             setTimeout(() => popup.remove(), 600);

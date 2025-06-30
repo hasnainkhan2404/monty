@@ -715,11 +715,25 @@ body {
     .nav-menu {
         display: none;
     }
-    
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        left: 20px;
+        z-index: 1001;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+        align-items: center;
+        animation: fadeInUp 0.4s;
+    }
     .nav-toggle {
         display: flex;
     }
-    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1259,8 +1273,9 @@ html {
 .timer-popup {
   position: fixed;
   top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 30px;
+  left: auto;
+  transform: none;
   background: linear-gradient(90deg, #111 0%, #b1001c 100%);
   color: #fff;
   font-weight: 700;
@@ -1272,7 +1287,7 @@ html {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  animation: timerPopIn 0.5s cubic-bezier(0.23,1,0.32,1);
+  animation: timerSlideIn 0.5s cubic-bezier(0.23,1,0.32,1);
   transition: transform 0.5s, opacity 0.5s;
   max-width: 90vw;
   min-width: 180px;
@@ -1280,13 +1295,14 @@ html {
 }
 .timer-popup.hide {
   opacity: 0;
-  transform: translateX(-50%) scale(0.95);
+  transform: translateX(120%);
+  transition: transform 0.5s, opacity 0.5s;
 }
-@keyframes timerPopIn {
-  0% { opacity: 0; transform: translateX(-50%) scale(0.7) translateY(-30px); }
-  60% { opacity: 1; transform: translateX(-50%) scale(1.08) translateY(8px); }
-  80% { transform: translateX(-50%) scale(0.97) translateY(-2px); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1) translateY(0); }
+@keyframes timerSlideIn {
+  0% { opacity: 0; transform: translateX(120%); }
+  60% { opacity: 1; transform: translateX(-8px); }
+  80% { transform: translateX(2px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 @media (max-width: 600px) {
   .timer-popup {
@@ -1294,5 +1310,22 @@ html {
     padding: 0.7rem 1.1rem;
     min-width: 120px;
     max-width: 96vw;
+    right: 8px;
+    top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-alert {
+    font-size: 0.92rem;
+    padding: 0.5rem 0.9rem;
+    min-width: 120px;
+    max-width: 96vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .order-emoji {
+    font-size: 1.1rem;
   }
 }
